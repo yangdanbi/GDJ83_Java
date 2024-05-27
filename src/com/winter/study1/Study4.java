@@ -16,9 +16,9 @@ public class Study4 {
 
 		System.out.println("프로그램을 종료합니다.");
 		
-		int result=num;
-		System.out.print(num/4);
-		System.out.println(num%4);
+		int result=num/4*10+num%4;
+		System.out.println(num);
+//		System.out.println(num%4);
 		System.out.println(result);
 		
 		//4진수
