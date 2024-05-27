@@ -18,20 +18,29 @@ public class Study8 {
 		for (int i = 0; i < tan; i++) {
 			System.out.println("1번 단발모드, 2번 점사모드: ");// 반복문이 돌아가면서 3번 물어봄
 			int mode = sc.nextInt();
+			int cnt = 10;
+			String sound = "타타탕";
 			if (mode == 1) {
-				for (int j = 0; j < 30; j++) {
-					System.out.println(j+1+"번 탕");
-				}//안쪽 for
+//				for (int j = 0; j < 30; j++) {
+//					System.out.println(j+1+"번 탕");
+//				}//안쪽 for
+				cnt = 30;
+				sound = "탕";
 
-			} else if (mode == 2) {
-				for (int j = 0; j < 10; j++) {
-					System.out.println(j+1+"번 타타탕");
-				}//안쪽 for
-			}else {
-				System.out.println("다시 선택");
+//			} else {
+//				cnt = 10;
+//				sound = "타타탕";
+//				// for (int j = 0; j < 10; j++) {
+////					System.out.println(j+1+"번 타타탕");
+////				}//안쪽 for
+			}
+				
+			for (int j = 0; j < cnt; j++) {
+				System.out.println(sound);
 			}
 		}
 
 	}
-
 }
+
+
