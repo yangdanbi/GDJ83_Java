@@ -15,7 +15,9 @@ public class S2_2 {
 		int math[] = null;
 		int num[] = null;// 학생번호
 		int[] total = null;// 총합
-		int[] avg = null;// 평균
+		double[] avg = null;// 평균
+		int temp = 0;
+		String sTemp = "";
 
 		while (flag) {
 			System.out.println("1. 학생정보 입력 2.학생정보 출력 3. 학생찾기(번호) 4. 성적순 정렬 5.프로그램 종료");
@@ -32,7 +34,7 @@ public class S2_2 {
 				eng = new int[cnt];
 				math = new int[cnt];
 				total = new int[cnt];
-				avg = new int[cnt];
+				avg = new double[cnt];
 
 				// System.out.println(cnt);
 
@@ -76,55 +78,61 @@ public class S2_2 {
 						System.out.print(total[i] + "\t");
 						System.out.print(avg[i] + "\n");
 					}
-
 				}
 				break;
 			case 4:
-//				for (int i = 0; i < total.length; i++) {
-//					System.out.println("1번째 for i= " + i);
-//					for (int j = i; j < total.length; j++) {
-//						System.out.println("2번째 for i= " + i);
-//						System.out.println("2번째 for j=" + j);
-//						if (total[i] < total[j]) {
-//							int temp = total[i];
-//							total[i] = total[j];
-//							total[j] = temp;
-//							System.out.println("if 안에 i= " + i);
-//							System.out.println("if 안에 j= " + j);
-//						}
-//					}
-//				}
-				for (int i = 0; i < avg.length; i++) {
+
+				for (int i = 0; i < total.length; i++) { // i=0,j=01234 ~i=4
 					// System.out.println("1번째 for i= " + i);
-					for (int j = i; j < avg.length; j++) {
+					for (int j = i; j < total.length; j++) {
 
-						if (avg[i] < avg[j]) {
-							int temp = avg[i];
-							avg[i] = avg[j];
-							avg[j] = temp;
+						if (avg[i] < avg[j]) { // i<j
+							temp = (int) avg[i];// 빈 변수에 더 작은수 넣기
+							avg[i] = avg[j];// i=j
+							avg[j] = temp;// j에 더 작은 수 담아놓은 변수 값 넣기
 
+							sTemp = student[i];
 							student[i] = student[j];
+							student[j] = sTemp;
+
+							temp = num[i];
 							num[i] = num[j];
+							num[j] = temp;
+
+							temp = kor[i];
 							kor[i] = kor[j];
+							kor[j] = temp;
+
+							temp = eng[i];
 							eng[i] = eng[j];
+							eng[j] = temp;
+
+							temp = math[i];
 							math[i] = math[j];
+							math[j] = temp;
+
+							temp = total[i];
 							total[i] = total[j];
-
-							System.out.println(i);
-
+							total[j] = temp;
 						}
 					}
 				}
-				for (int i = 0; i < total.length; i++) {
-					System.out.println(total[i]);
+				System.out.println("번호\t이름\t국어\t영어\t수학\t총점\t평균");
+				for (int i = 0; i < num.length; i++) {
+
+					System.out.print(num[i] + "\t");
+					System.out.print(student[i] + "\t");
+					System.out.print(kor[i] + "\t");
+					System.out.print(eng[i] + "\t");
+					System.out.print(math[i] + "\t");
+					System.out.print(total[i] + "\t");
+					System.out.print(avg[i] + "\n");
 				}
 
 				break;
 			default:
 				flag = !flag;
 				System.out.println("프로그램 종료");
-
-//			System.out.println(student[i] + " : " + "국어점수 : " + kor[i] + ", 영어점수 : " + eng[i] + ", 수학점수 : " + math[i]);
 
 			}
 		}
