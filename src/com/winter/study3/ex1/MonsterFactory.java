@@ -5,6 +5,7 @@ import java.util.Random;
 public class MonsterFactory {
 	public Monster createMonster() {
 		// 몬스터 객체 만들어줌
+		// Monster 에 저장해놓은 변수값대로 몬스터가 만들어짐
 		Monster m = new Monster();// 몬스터 만드는 식
 		return m;
 

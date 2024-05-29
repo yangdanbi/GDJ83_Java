@@ -4,7 +4,7 @@ public class GameController {
 
 	public void start() {
 		// 몬스터 생성 클래스 따로 만들기
-//		System.out.println("start 메서드 실행");
+		// System.out.println("start 메서드 실행");
 		// 몬스터 생성 1마리, 3마리
 
 		MonsterFactory mf = new MonsterFactory();
