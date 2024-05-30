@@ -6,7 +6,8 @@ public class Ex2Main {
 		Study study = new Study();
 
 		int[] ar = { 1, 2, 3 };
-		ar = study.remove(ar);// 매개변수로 보내는 값 => 인자값
+		// ar = study.add(ar);// 매개변수로 보내는 값 => 인자값
+		ar = study.remove(ar);
 		System.out.println(ar.length);
 //		System.out.println(ar[3]);
 
