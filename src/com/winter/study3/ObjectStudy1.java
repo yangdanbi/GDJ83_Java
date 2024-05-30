@@ -6,7 +6,16 @@ public class ObjectStudy1 {
 		StudyReturn sr = new StudyReturn();
 //		int result = sr.t2();
 		int n = sr.t1();
+		int sal = 5000000;
+		sr.t4(sal);
+		System.out.println(sal);
 //		System.out.println(result);
+
+		Test test = new Test();
+		test.level = 1;
+		Test test1 = sr.t5(test);// t5를 실행하면서 test 값을 보냄 500의 값을 리턴받아 저장할 변수 선언
+		System.out.println(test.level);
+		System.out.println(test1.level);// 500
 
 		// 짝수면 출력x
 //		sr.t2();
