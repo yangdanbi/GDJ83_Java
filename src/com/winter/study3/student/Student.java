@@ -1,6 +1,7 @@
 package com.winter.study3.student;
 
 public class Student {
+	//test
 	// 멤버변수
 	// 인스턴스 변수
 	// 데이터만 있을땐 메서드x
