@@ -1,6 +1,6 @@
 package com.winter.s3;
 
-public class Eagle extends Bird implements Fly {
+public class Eagle extends Bird implements Fly, B, C, D {
 
 	@Override
 	public void flyable() {

@@ -1,6 +1,6 @@
 package com.winter.s2;
 
-public class Student {
+public class Student extends Object {
 	private int num;
 	private String name;
 	private int kor;
