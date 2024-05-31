@@ -12,8 +12,10 @@ public class QueStudy {
 	}
 
 	public int[] remove(int[] ar) {
+//		맨 뒤에 요소삭제
 		// 하나의 요소를 삭제하고
 		// 삭제된 배열을 리턴
+		// 하나씩 밀리게 지우기..?
 
 	}
 }
