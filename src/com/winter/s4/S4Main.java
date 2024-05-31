@@ -2,23 +2,37 @@ package com.winter.s4;
 
 public class S4Main {
 
-	// 메인이 static인 이유 : 객체 생성없이 메인을 실행하려고
 	public static void main(String[] args) {
+		// 하이마트
+		// tv : 브랜드, 사이즈, 가격, 포인트
+		// computer : 브랜드, 가격, cpu, 포인트
+		// phone : 브랜드, 가겨그 칼라, 포인트
 
-		// 객체를 만들지 않고 사용
-		// static으로 선언된 건
-		// 클래스명.변수명 으로 사용
-		// Car.company = "aa";
-		// System.out.println(Car.company);
+		Tv tv = new Tv();
+		tv.brand = "Samsung";
+		tv.price = 500;
+		tv.point = 50;
+		tv.size = 100;
 
-		// 주소를 모르니까
-		Car.info();
-		// 공통적으로 들어가는 것들은 static으로 사용하면 좋음
+		Computer computer = new Computer();
+		computer.brand = "Apple";
+		computer.price = 300;
+		computer.point = 30;
+		computer.cpu = "M3";
 
-		System.out.println(Math.E);
+		Phone phone = new Phone();
+		phone.brand = "LG";
+		phone.price = 150;
+		phone.point = 15;
+		phone.color = "Pink";
 
-		double b = Math.abs(1.2);
-		System.out.println(b);
+		// 손님
+		Customer coustomer = new Customer();
+		coustomer.don = 1000;
+		coustomer.point = 0;
+
+		coustomer.buy(computer);
+
 	}
 
 }
