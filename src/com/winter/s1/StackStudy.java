@@ -8,16 +8,26 @@ public class StackStudy {
 		// 받은 배열에서 하나의 임의의 데이터를 추가
 		// 제일 앞에 추가되게 하기 unshift
 		// 추가된 배열을 리턴
-		int [] ar2 = new int [];
-
-		return;
+		int[] ar2 = new int[ar.length + 1];
+		
+		for (int i = 0; i < ar.length; i++) {
+			ar2[i + 1] = ar[i];
+		}
+		ar2[0]= 5;
+		return ar2;
 
 	}
 
 	public int[] remove(int[] ar) {
 		// 하나의 요소를 삭제하고
 		// 삭제된 배열을 리턴
-		// 맨앞 삭제
+		// 맨앞 삭제       
+		int[] ar2 = new int[ar.length - 1];
+		for (int i = 0; i < ar2.length; i++) {
+			ar2[i] = ar[i + 1];
+		}
+
+		return ar2;
 
 	}
 }

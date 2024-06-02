@@ -3,8 +3,19 @@ package com.winter.s1;
 public class S1Main {
 
 	public static void main(String[] args) {
-		int[] ar = {1,2,3,4,5};
+		StackStudy stack = new StackStudy();
+		QueStudy que = new QueStudy();
 		
+		int[] ar = {1,2,3,4};
+		
+		ar = que.add(ar);
+				
+		System.out.println("add 메서드");
+		for(int i=0;i<ar.length;i++) {
+			System.out.println(ar[i]);
+		}
+		ar = que.remove(ar);
+		System.out.println("remove 메서드");
 		for(int i=0;i<ar.length;i++) {
 			System.out.println(ar[i]);
 		}
