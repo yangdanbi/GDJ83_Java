@@ -8,7 +8,7 @@ public class Ex2Main {
 		int[] ar = { 1, 2, 3 };
 		// ar = study.add(ar);// 매개변수로 보내는 값 => 인자값
 		ar = study.remove(ar);
-		System.out.println(ar.length);
+//		System.out.println(ar.length);
 //		System.out.println(ar[3]);
 
 		for (int i = 0; i < ar.length; i++) {
