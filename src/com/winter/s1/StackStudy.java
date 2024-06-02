@@ -8,6 +8,7 @@ public class StackStudy {
 		// 받은 배열에서 하나의 임의의 데이터를 추가
 		// 제일 앞에 추가되게 하기 unshift
 		// 추가된 배열을 리턴
+		int [] ar2 = new int [];
 
 		return;
 
