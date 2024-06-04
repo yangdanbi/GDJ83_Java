@@ -76,6 +76,12 @@ public class Wrapper3 {
 			int juminnum = Integer.parseInt(str + "");// char+문자는 문자
 			total = total + juminnum * gop[i];
 
+			int num = 11 - total % 11;
+
+			if (num == jumin.length()) {
+
+			}
+
 //			System.out.println("곱: " + juminnum * gop[i]);// 문자열로 계산됨
 //			System.out.println("입력값 : " + juminnum);
 
@@ -83,7 +89,7 @@ public class Wrapper3 {
 //				
 //			}
 		}
-		int num = 11 - total % 11;
+
 //		if()
 //		System.out.println("total : " + total);
 

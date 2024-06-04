@@ -30,8 +30,20 @@ public class WeatherService {
 		}
 
 //		for(int i=0;i<)
-		int cnt = (int) sb.length() / 4;
-		WeatherDTO[] str1 = new WeatherDTO[cnt];
+//		int cnt = (int) sb.length() / 4;
+		WeatherDTO[] str1 = new WeatherDTO[data.length / 4];// 배열 4개씩 만들어야함
+		for (int i = 0; i < str1.length; i++) { // 객체를 만들어줘야함
+			// WeatherDTO wd = new WeatherDTO();
+
+			WeatherDTO weatherDTO = new WeatherDTO();
+			weatherDTO.setCity(data[i].trim());
+			weatherDTO.setGion(Double.parseDouble(data[i].trim()));
+			weatherDTO.setStaus(data[i].trim());
+			weatherDTO.setHuminity(Integer.parseInt(data[i].trim()));
+
+			System.out.println(weatherDTO);
+		}
+
 		System.out.println(str1.length);
 
 		for (int i = 0; i < str1.length; i++) {
@@ -43,7 +55,7 @@ public class WeatherService {
 			weatherDTO.setHuminity(Integer.parseInt(data[i].trim()));
 
 //			System.out.println(str1.length);
-			System.out.println(str1[i].getCity());
+			// System.out.println(str1[i].getCity());
 		}
 
 	}
