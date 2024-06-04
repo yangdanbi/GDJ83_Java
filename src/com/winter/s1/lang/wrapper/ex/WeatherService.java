@@ -10,9 +10,9 @@ public class WeatherService {
 
 	public WeatherService() {
 		this.sb = new StringBuffer();
-		this.sb.append("서울 , 29.3 - 맑음 - 60"); // 01234
-		this.sb.append("-부산 , 33.3 - 흐림 - 90");// 5678
-		this.sb.append("-제주 , 26.5 - 눈 - 30");// 9101112
+		this.sb.append("서울 , 29.3 - 맑음 - 60"); // 0123
+		this.sb.append("-부산 , 33.3 - 흐림 - 90");// 4567
+		this.sb.append("-제주 , 26.5 - 눈 - 30");// 891011
 		this.sb.append("-광주 , 10.6 - 태풍 - 80");
 
 	}
@@ -24,39 +24,46 @@ public class WeatherService {
 		info = info.replace(",", "-");
 //		info = info.replace(" ", "");
 		String[] data = info.split("-");
+		//WeatherDTO weatherDTO = new WeatherDTO();
 
 		for (int i = 0; i < data.length; i++) {
-			System.out.println(data[i]);
-		}
+			data[i] = data[i].trim();
 
-//		for(int i=0;i<)
-//		int cnt = (int) sb.length() / 4;
+			// System.out.println(data[i]);
+		}
 		WeatherDTO[] str1 = new WeatherDTO[data.length / 4];// 배열 4개씩 만들어야함
 		for (int i = 0; i < str1.length; i++) { // 객체를 만들어줘야함
-			// WeatherDTO wd = new WeatherDTO();
 
-			WeatherDTO weatherDTO = new WeatherDTO();
-			weatherDTO.setCity(data[i].trim());
-			weatherDTO.setGion(Double.parseDouble(data[i].trim()));
-			weatherDTO.setStaus(data[i].trim());
-			weatherDTO.setHuminity(Integer.parseInt(data[i].trim()));
-
-			System.out.println(weatherDTO);
+			//str1[i] = weatherDTO; // 이 객체에 속성을 배열로 만들것
 		}
-
-		System.out.println(str1.length);
 
 		for (int i = 0; i < str1.length; i++) {
-
 			WeatherDTO weatherDTO = new WeatherDTO();
-			weatherDTO.setCity(data[i].trim());
-			weatherDTO.setGion(Double.parseDouble(data[i].trim()));
-			weatherDTO.setStaus(data[i].trim());
-			weatherDTO.setHuminity(Integer.parseInt(data[i].trim()));
+			weatherDTO.setCity(data[i * 4]);
+			weatherDTO.setGion(Double.parseDouble(data[i * 4 + 1]));
+			weatherDTO.setStaus(data[i * 4 + 2]);
+			weatherDTO.setHuminity(Integer.parseInt(data[i * 4 + 3]));
 
-//			System.out.println(str1.length);
-			// System.out.println(str1[i].getCity());
+			str1[i] = weatherDTO;
+			// for (int j = 0; j < data.length; j = j + 4) {
+//				str1[i].setCity(data[j*4]);
+//				str1[i].setGion(Double.parseDouble(data[j*4+1]));
+//				str1[i].setStaus(data[j*4+2]);
+//				str1[i].setHuminity(Integer.parseInt(data[j*4+3]));
+
+			// System.out.println(str1[0]);
+			// }
 		}
+		for (int i = 0; i < str1.length; i++) {
+			//for (int j = 0; j < data.length; j = j + 4) {
+				System.out.println(str1[i].getCity());
+				System.out.println(str1[i].getGion());
+				System.out.println(str1[i].getStaus());
+				System.out.println(str1[i].getHuminity());
+				System.out.println("=====================");
+
+		}
+
 
 	}
 }
