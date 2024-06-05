@@ -134,8 +134,9 @@ public class WeatherService {
 	// 반복문 두개쓰는게 젤 간ㅍㄴ
 	public void removeWeather(Scanner sc, WeatherDTO[] ar) {
 		WeatherDTO weatherDTO = new WeatherDTO();
-
 		WeatherDTO[] ar2 = new WeatherDTO[ar.length - 1];
+		int cnt = ar2.length; //
+
 		System.out.println("삭제할 도시명을 입력해주세요: ");
 		String delName = sc.next();
 		for (int i = 0; i < ar2.length - 1; i++) {
