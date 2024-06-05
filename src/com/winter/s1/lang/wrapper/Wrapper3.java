@@ -67,42 +67,30 @@ public class Wrapper3 {
 		int total = 0;
 		int oth = 0;
 		for (int i = 0; i < jumin.length() - 1; i++) {
-			if (i == 6) {
-				continue;
+			char juminch = jumin.charAt(i);// char
+			if (i == 6) {// - 해결
+				continue;// 그 즉시 증감식
 			}
-			char juminch = jumin.charAt(i);
-			String str = String.valueOf(juminch);
+			String str = String.valueOf(juminch);// string으로 가져와서
+			int juminnum = Integer.parseInt(str + "");// char+문자는 문자 int로 바꿈
 
-			int juminnum = Integer.parseInt(str + "");// char+문자는 문자
 			total = total + juminnum * gop[i];
 
-			int num = 11 - total % 11;
-
-			if (num == jumin.length()) {
-
-			}
-
-//			System.out.println("곱: " + juminnum * gop[i]);// 문자열로 계산됨
-//			System.out.println("입력값 : " + juminnum);
-
-//			if(total % 11==jumin.length()) {
-//				
+//			if (num == jumin.length()) {
+//
 //			}
+		} // for
+		total %= 11;
+		total = 11 - total;
+		if (total > 9) {
+			total = total % 10;
 		}
-
-//		if()
-//		System.out.println("total : " + total);
-
-//		String a = jumin.replace("-", 0);
-//		int[] ar = new int[Integer.parseInt(jumin)];
-//		int tot = 0;
-//
-//		for (int i = 0; i < 13; i++) {
-//
-//			tot += gop[i] * Integer.parseInt(jumin.substring(i, 1));
-//		}
-		// System.out.println(tot);
-//		System.out.println();
+		int a = Integer.parseInt(String.valueOf(jumin.charAt(jumin.length() - 1)));// 길게 쓰면 불필요한 변수생성x
+		if (total == a) {
+			System.out.println("검증 완료");
+		} else {
+			System.out.println("검증 실패");
+		}
 
 	}
 

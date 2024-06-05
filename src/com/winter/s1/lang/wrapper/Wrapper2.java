@@ -13,20 +13,33 @@ public class Wrapper2 {
 		System.out.println(pw);
 
 //		boolean flag = true;
-		String result = "대문자를 포함해야함";
+		// String result = "최소 1 이상의 대문자를 포함해야함";
+		int upper = 0;
+		int lower = 0;
+		int digit = 0;
 
 		// String idx = pw.substring(0);
 		for (int i = 0; i < pw.length(); i++) {
-			char ch = pw.charAt(i);
-			if (Character.isUpperCase(ch)) {
-				result = "통과";
+			char ch = pw.charAt(i);// 한글자꺼내옴
+			if (Character.isUpperCase(ch)) {// 대문자인지 판별
+				upper++;
+//				result = "통과";
 //				flag = false;
-				break;
+//				break;
+			} else if (Character.isLowerCase(ch)) {// 소문자냐
+				lower++;
+			} else if (Character.isDigit(ch)) {// 숫자냐
+				digit++;
 			}
 //			flag = Character.isUpperCase(ch);
 			// System.out.println(ch);
+		} // for 끝
+		if (upper > 0 && lower > 0 && digit > 0) {
+			System.out.println("대/소문자,숫자 확인");
+		} else {
+			System.out.println("실패");
 		}
-		System.out.println(result);
+		// System.out.println(result);
 //		if (flag) {
 //			System.out.println("대문자가 포함되었습니다.");
 //		} else {
