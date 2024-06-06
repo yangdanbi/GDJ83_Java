@@ -17,7 +17,7 @@ public class WeatherView {
 
 	// view
 	// 날씨들의 정보를 받아서 이쁘게 출력-배열
-	public WeatherDTO[] view(WeatherDTO[] dtos) { // WeatherDTO[]인 str1을 받을거임 WeatherDTO을 모아놓은 배열 dtos
+	public WeatherDTO[] view(WeatherDTO[] dtos) { // WeatherDTO[]인 dtos을 받을거임 WeatherDTO을 모아놓은 배열 dtos
 		// System.out.println("dtos 호출");
 		for (int i = 0; i < dtos.length; i++) {
 			// 멤버변수의 타입이 private라 게터세터

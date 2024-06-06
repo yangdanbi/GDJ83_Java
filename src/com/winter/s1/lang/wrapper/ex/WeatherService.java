@@ -70,7 +70,7 @@ public class WeatherService {
 	// 날씨정보를 도시명으로 검색 서울입력하면 서울 정보 리턴
 	// findByCity
 
-	public WeatherDTO findByCity(WeatherDTO[] ar, Scanner sc) {
+	public WeatherDTO findByCity(WeatherDTO[] ar, Scanner sc) {//WeatherDTO[], Scanner 를 줘야 함
 		WeatherDTO weatherDTO = null;
 		System.out.println("검색 할 도시를 입력하세요: ");
 		String city = sc.next();
@@ -132,22 +132,22 @@ public class WeatherService {
 	// 도시명을 입력받아서 일치하는 날씨정보 삭제
 	// 3번은 추가 4번은 제거
 	// 반복문 두개쓰는게 젤 간ㅍㄴ
-	public void removeWeather(Scanner sc, WeatherDTO[] ar) {
-		WeatherDTO weatherDTO = new WeatherDTO();
+	public WeatherDTO[] removeWeather(Scanner sc, WeatherDTO[] ar) {
+//		WeatherDTO weatherDTO = new WeatherDTO();
 		WeatherDTO[] ar2 = new WeatherDTO[ar.length - 1];
-		int cnt = ar2.length; //
+
+		int cnt = 0; //
 
 		System.out.println("삭제할 도시명을 입력해주세요: ");
 		String delName = sc.next();
-		for (int i = 0; i < ar2.length - 1; i++) {
-			if (delName.equals(ar2[i].getCity())) {
-				System.out.println("같은이름입력");
-
+		for (int i = 0; i < ar.length; i++) {
+			if (delName.equals(ar[i].getCity())) {
+				continue;
 			} else {
-				System.out.println("오류");
+				ar2[cnt++] = ar[i];
 			}
-
 		}
 
+		return ar2;
 	}
 }

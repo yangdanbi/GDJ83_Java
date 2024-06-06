@@ -48,9 +48,8 @@ public class WeatherContoroller {
 
 			} else if (mode == 4) {
 
-				// dtos = weatherSrrvice.addWeather(dtos, sc);
-				System.out.println("삭제실행");
-				weatherSrrvice.removeWeather(sc, dtos);
+				dtos = weatherSrrvice.removeWeather(sc, dtos);
+				System.out.println("삭제완료");
 
 			} else {
 				System.out.println("종료");
