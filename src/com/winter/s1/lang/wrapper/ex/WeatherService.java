@@ -50,13 +50,13 @@ public class WeatherService {
 		while (st.hasMoreTokens()) {
 			// 넣으려고 하는 객체 생성해줘야함
 			WeatherDTO weatherDTO = new WeatherDTO();
-
+			String cN = st.nextToken().trim();
 			Double cG = Double.parseDouble(st.nextToken().trim());
 			String cS = st.nextToken().trim();
 			int cH = Integer.parseInt(st.nextToken().trim());
 			// for문 쓰면 인덱스 에러
 			// for (int i = 0; i < weatherTok.length; i++) {
-			weatherDTO.setCity(st.nextToken().trim());
+			weatherDTO.setCity(cN);
 			weatherDTO.setGion(cG);
 			weatherDTO.setStaus(cS);
 			weatherDTO.setHuminity(cH);
