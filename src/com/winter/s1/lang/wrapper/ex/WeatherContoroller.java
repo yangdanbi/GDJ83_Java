@@ -44,16 +44,18 @@ public class WeatherContoroller {
 			} else if (mode == 3) {
 
 				dtos = weatherSrrvice.addWeather(dtos, sc);
-				System.out.println("추가완료");
+				System.out.println("추가가 완료되었습니다.");
 
 			} else if (mode == 4) {
 
 				dtos = weatherSrrvice.removeWeather(sc, dtos);
-				System.out.println("삭제완료");
+				System.out.println("삭제가 완료되었습니다.ㅣ");
 
-			} else {
-				System.out.println("종료");
+			} else if (mode == 5) {
+				System.out.println("프로그램을 종료합니다.");
 				flag = false;
+			} else {
+				System.out.println("올바른 숫자를 입력해주세요  ");
 			}
 
 		}

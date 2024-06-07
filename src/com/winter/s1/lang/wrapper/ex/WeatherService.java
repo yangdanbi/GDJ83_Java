@@ -1,6 +1,7 @@
 package com.winter.s1.lang.wrapper.ex;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 	// Controller Layer
@@ -21,16 +22,54 @@ public class WeatherService {
 
 	public WeatherDTO[] init() {// 지역변수
 		// sb 에 있는 것을 문자열 변수에 담아서 출력
+		// 문자열을 잘라서 하나의 오브젝트 웨더dto 배열에 넣는것
 		String info = sb.toString();
 		// System.out.println(info);
 		info = info.replace(",", "-");
 //		info = info.replace(" ", "");
 		// WeatherDTO weatherDTO = new WeatherDTO();
-		WeatherDTO[] dtos = this.getWeathers(info);
+		WeatherDTO[] dtos = this.useTokenizer(info);
 		return dtos;
 
 	}
 
+//날씨정보를 받아와서  - 기준으로 자르기 tokenizer 
+//	WeatherDTO[]
+	private WeatherDTO[] useTokenizer(String info) {
+		StringTokenizer st = new StringTokenizer(info, "-");
+
+		WeatherDTO[] weatherTok = new WeatherDTO[4];
+//		WeatherDTO[] dtos = new WeatherDTO[4];
+		int i = 0;
+
+		// 객체를 만들어야함
+		// .trim() 을 안하면 60 앞에 공백이 있기 때문에 해줘야함......
+		while (st.hasMoreTokens()) {
+			// 넣으려고 하는 객체 생성해줘야함
+			WeatherDTO weatherDTO = new WeatherDTO();
+
+			Double cG = Double.parseDouble(st.nextToken().trim());
+			String cS = st.nextToken().trim();
+			int cH = Integer.parseInt(st.nextToken().trim());
+			// for문 쓰면 인덱스 에러
+			// for (int i = 0; i < weatherTok.length; i++) {
+			weatherDTO.setCity(st.nextToken().trim());
+			weatherDTO.setGion(cG);
+			weatherDTO.setStaus(cS);
+			weatherDTO.setHuminity(cH);
+
+			// 배열에 넣기
+			weatherTok[i] = weatherDTO;
+
+			i++;
+			// }
+		}
+
+		return weatherTok;
+	}
+
+//split 인덱스 번호를 계속 생각해야해서 StringTokenizer가 편함
+	// 이름 처럼 인덱스가 하나면 split 가 편함
 	private WeatherDTO[] getWeathers(String info) {
 		String[] data = info.split("-");// 16개/4
 
@@ -70,7 +109,7 @@ public class WeatherService {
 	// 날씨정보를 도시명으로 검색 서울입력하면 서울 정보 리턴
 	// findByCity
 
-	public WeatherDTO findByCity(WeatherDTO[] ar, Scanner sc) {//WeatherDTO[], Scanner 를 줘야 함
+	public WeatherDTO findByCity(WeatherDTO[] ar, Scanner sc) {// WeatherDTO[], Scanner 를 줘야 함
 		WeatherDTO weatherDTO = null;
 		System.out.println("검색 할 도시를 입력하세요: ");
 		String city = sc.next();
@@ -117,11 +156,11 @@ public class WeatherService {
 //		weatherDTO.setStaus(cityStaus);
 
 		WeatherDTO[] ar2 = new WeatherDTO[ar.length + 1];
+		ar2[ar2.length - 1] = weatherDTO;
 		for (int i = 0; i < ar.length; i++) {
 			ar2[i] = ar[i];
 		}
 
-		ar2[ar2.length - 1] = weatherDTO;
 //		System.out.println(ar2[4].getCity());
 //		System.out.println(cityName + cityGion + cityStaus + cityHumi);
 		return ar2;
