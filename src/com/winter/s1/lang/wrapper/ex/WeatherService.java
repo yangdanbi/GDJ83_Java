@@ -1,5 +1,6 @@
 package com.winter.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -37,8 +38,10 @@ public class WeatherService {
 //	WeatherDTO[]
 	private WeatherDTO[] useTokenizer(String info) {
 		StringTokenizer st = new StringTokenizer(info, "-");
-
+		// 배열을 만들어줌
 		WeatherDTO[] weatherTok = new WeatherDTO[4];
+		ArrayList<WeatherDTO> arrays = new ArrayList<WeatherDTO>();
+
 //		WeatherDTO[] dtos = new WeatherDTO[4];
 		int i = 0;
 
@@ -57,6 +60,8 @@ public class WeatherService {
 			weatherDTO.setGion(cG);
 			weatherDTO.setStaus(cS);
 			weatherDTO.setHuminity(cH);
+			// 리스트에 넣기
+			arrays.add(weatherDTO);
 
 			// 배열에 넣기
 			weatherTok[i] = weatherDTO;

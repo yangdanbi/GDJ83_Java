@@ -9,6 +9,9 @@ public class ListMain2 {
 		// <E> :<>안에 E는 변수
 //		string 만 모으는 arrayList 안정성 확보
 		ArrayList<String> ar = new ArrayList<String>();
+		// integer 타입 list 타입 생략도 가능함
+		ArrayList<Integer> ar2 = new ArrayList();
+//		ar2.add
 
 		ar.add("first");
 //		ar.add(2);
