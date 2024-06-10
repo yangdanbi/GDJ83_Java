@@ -7,6 +7,10 @@ import java.util.Random;
 public class SetMain2 {
 
 	public static void main(String[] args) {
+		String n = "123";
+
+		Object obj = n;// string은 object 타입이라 가능
+		System.out.println(obj instanceof String);
 
 		// 로또 번호
 		// 1-45번 : 6개
