@@ -20,15 +20,15 @@ public class ExceptionMain1 {
 			System.out.println("숫자만 입력할 수 있습니다.");
 		} catch (Exception e) {// 다형성 모든 에러 보통은 exception에서 끝남
 
-		} catch (Throwable e) {
+		} catch (Throwable e) {// Exception로 해결되지 않은 것들을 위함
 
 		}
 		Exception1 ex1 = new Exception1();
 		try {// 예외가 발생하면 종료가 되는데 그걸 막고 프로그램이 정상적으로 돌아가게 하기 위함
 			ex1.ex1(0);
 		} catch (ArithmeticException e) {
-//			e.printStackTrace();// 어디서 에러가 발생한건지 찍어주는 메서드
-			System.out.println(e.printStackTrace());
+			e.printStackTrace();// 어디서 에러가 발생한건지 찍어주는 메서드
+			// System.out.println(e.printStackTrace());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
