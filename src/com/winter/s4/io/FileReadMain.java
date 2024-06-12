@@ -21,7 +21,7 @@ public class FileReadMain {
 
 			while (true) {
 				String s = br.readLine(); // 커서가 더 내려가지 않는다면
-				if (s == null) {
+				if (s == null) {// 읽어올게 없으면 멈추기
 					break;
 				}
 				System.out.println(s);
