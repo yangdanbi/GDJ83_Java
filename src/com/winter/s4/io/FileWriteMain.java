@@ -26,7 +26,9 @@ public class FileWriteMain {
 				}
 
 				// e, E가 입력되면 종료
-				fw.write(s + "\r\n");
+				// 두개를 같이 써줘야함
+				fw.write(s + "\r\n");// 버퍼를 밀어내고 땡겨오기 위해서 \r을 씀
+				fw.flush();// 버퍼를 강제로 비우게 해줌
 //			fw.write("first");
 //			fw.write("second");// 파일내용 덮어씌움
 				// fw.write("\n5555");//
