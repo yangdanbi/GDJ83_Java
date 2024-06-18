@@ -63,9 +63,12 @@ public class ClientEx {
 					}
 
 				} else if (mode == 2) {
+					System.out.println("학생검색입니다.");
 					// 학생한명리스트
-					System.out.println("특정학생 이름을 입력하세요: ");
-					String name = scanner.next();
+					System.out.println("찾을 학생의 번호를 입력하세요: ");
+					int num = scanner.nextInt();
+					ow.write(num + "\r\n");// 서버에 학생번호를 보냄
+					ow.flush();
 
 					str = br.readLine();
 					System.out.println("서버에서 보냄 :" + str);
